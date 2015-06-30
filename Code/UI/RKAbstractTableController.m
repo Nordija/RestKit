@@ -525,6 +525,10 @@ static NSString* lastUpdatedDateDictionaryKey = @"lastUpdatedDateDictionaryKey";
             cell.hidden = YES;
         }
     }
+    
+    if ([self.delegate respondsToSelector:@selector(tableController:willDisplayCell:forObject:atIndexPath:)]) {
+        [self.delegate tableController:self willDisplayCell:cell forObject:mappableObject atIndexPath:indexPath];
+    }
 }
 
 // Variable height support

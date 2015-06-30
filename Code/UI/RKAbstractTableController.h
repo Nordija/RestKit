@@ -312,10 +312,13 @@ extern NSString* const RKTableControllerDidBecomeOffline;
 - (void)tableController:(RKAbstractTableController *)tableController willAddSwipeView:(UIView*)swipeView toCell:(UITableViewCell *)cell forObject:(id)object;
 - (void)tableController:(RKAbstractTableController *)tableController willRemoveSwipeView:(UIView*)swipeView fromCell:(UITableViewCell *)cell forObject:(id)object;
 
+// Cells
+// (This callback 'willDisplayCell' implemented by Nordija)
+- (void)tableController:(RKAbstractTableController *)tableController willDisplayCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
+
 // BELOW NOT YET IMPLEMENTED
 
 // Cells
-- (void)tableController:(RKAbstractTableController *)tableController willDisplayCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
 - (void)tableController:(RKAbstractTableController *)tableController didSelectCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
 
 // Objects
