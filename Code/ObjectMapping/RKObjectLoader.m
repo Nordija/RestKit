@@ -105,9 +105,16 @@
 - (void)informDelegateOfError:(NSError *)error {
     [(NSObject<RKObjectLoaderDelegate>*)_delegate objectLoader:self didFailWithError:error];
     
+    
+    // nroos: There was an issue where, when this method is called, 'self' had been dereferenced.
+    // As the onDidFailWithError block is not set or used anywhere, for now I'll comment it out.
+    /*
     if (self.onDidFailWithError) {
         self.onDidFailWithError(error);
     }
+     */
+    
+    
 }
 
 #pragma mark - Response Processing
