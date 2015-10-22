@@ -333,9 +333,29 @@
     // TODO: Could not get the KVO to work without a boolean property...
     // TODO: Need to figure out how to group the objects into sections
     // TODO: Apply any sorting...
+    
+    if ([self.delegate respondsToSelector:@selector(tableController:willLoadTableWithObjects:callback:)]) {
+        
+        NSMutableArray *mutableObjects = (NSMutableArray *)objects;
+        
+        [self.delegate tableController:self willLoadTableWithObjects:mutableObjects callback:^(NSArray *filteredObjects){
+            
+            [self loadTableWithObjects:filteredObjects];
+            
+        }];
+        
+    } else {
+        [self loadTableWithObjects:objects];
+        
+    }
 
+}
+
+- (void)loadTableWithObjects:(NSArray *)objects {
+    
     // Load them into the first section for now
     [self loadObjects:objects inSection:0];
+    
 }
 
 - (void)reloadRowForObject:(id)object withRowAnimation:(UITableViewRowAnimation)rowAnimation {

@@ -325,6 +325,9 @@ extern NSString* const RKTableControllerDidBecomeOffline;
 - (void)tableControllerDidBeginUpdates:(RKAbstractTableController *)tableController;
 - (void)tableControllerDidEndUpdates:(RKAbstractTableController *)tableController;
 
+// Implemented by nroos/Nordija:
+- (void)tableController:(RKAbstractTableController *)tableController willLoadTableWithObjects:(NSMutableArray *)objects callback:(void (^)(NSArray *filteredObjects))callback;
+
 @end
 
 #endif // TARGET_OS_IPHONE
