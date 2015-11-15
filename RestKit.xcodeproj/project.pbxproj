@@ -432,6 +432,26 @@
 		31B966AC1BE3B70500F0402A /* RKMappingTestExpectation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25055B8D14EEF40000B9C4DD /* RKMappingTestExpectation.h */; };
 		31B966AD1BE3B70500F0402A /* Testing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 252EFB2414D9B6F2004863C8 /* Testing.h */; };
 		31B966AE1BE3B70500F0402A /* UDTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 252EFB1414D99222004863C8 /* UDTableView.h */; };
+		31E07AEC1BF8CBAD005523CD /* lcl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160EA21456532C0060A5C5 /* lcl.h */; };
+		31E07AED1BF8CBAD005523CD /* lcl_config_components.template.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160EA41456532C0060A5C5 /* lcl_config_components.template.h */; };
+		31E07AEE1BF8CBAD005523CD /* lcl_config_extensions.template.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160EA51456532C0060A5C5 /* lcl_config_extensions.template.h */; };
+		31E07AEF1BF8CBAD005523CD /* lcl_config_logger.template.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160EA61456532C0060A5C5 /* lcl_config_logger.template.h */; };
+		31E07AF01BF8CBAD005523CD /* lcl_config_logger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160EAF1456532C0060A5C5 /* lcl_config_logger.h */; };
+		31E07AF11BF8CBAD005523CD /* LCLNSLog.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160EB01456532C0060A5C5 /* LCLNSLog.h */; };
+		31E07AF21BF8CF3B005523CD /* Support.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160DCA145650490060A5C5 /* Support.h */; };
+		31E07AF31BF90692005523CD /* RKErrors.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25B6E95414CF795D00B1E881 /* RKErrors.h */; };
+		31E07AF41BF906AD005523CD /* RKManagedObjectStore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D52145650490060A5C5 /* RKManagedObjectStore.h */; };
+		31E07AF51BF906C2005523CD /* RKManagedObjectMapping.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D4C145650490060A5C5 /* RKManagedObjectMapping.h */; };
+		31E07AF61BF906D1005523CD /* RKParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160DC5145650490060A5C5 /* RKParser.h */; };
+		31E07AF71BF906DD005523CD /* CoreData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D46145650490060A5C5 /* CoreData.h */; };
+		31E07AF81BF906F1005523CD /* NSManagedObject+ActiveRecord.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D47145650490060A5C5 /* NSManagedObject+ActiveRecord.h */; };
+		31E07AF91BF90711005523CD /* RKManagedObjectLoader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D4A145650490060A5C5 /* RKManagedObjectLoader.h */; };
+		31E07AFA1BF90711005523CD /* RKManagedObjectMappingOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D4E145650490060A5C5 /* RKManagedObjectMappingOperation.h */; };
+		31E07AFB1BF90711005523CD /* RKManagedObjectSeeder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D50145650490060A5C5 /* RKManagedObjectSeeder.h */; };
+		31E07AFC1BF90711005523CD /* RKManagedObjectThreadSafeInvocation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D54145650490060A5C5 /* RKManagedObjectThreadSafeInvocation.h */; };
+		31E07AFD1BF90728005523CD /* RKObjectPropertyInspector+CoreData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D56145650490060A5C5 /* RKObjectPropertyInspector+CoreData.h */; };
+		31E07AFE1BF907B4005523CD /* UI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25B6E91B14CF778D00B1E881 /* UI.h */; };
+		31E07AFF1BF907C4005523CD /* NSData+Base64.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160E911456532C0060A5C5 /* NSData+Base64.h */; };
 		49A66B0D14CEFB0400A6F062 /* XMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A66B0914CEFB0400A6F062 /* XMLReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49A66B0E14CEFB0400A6F062 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A66B0A14CEFB0400A6F062 /* XMLReader.m */; };
 		49A66B0F14CEFB0400A6F062 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A66B0A14CEFB0400A6F062 /* XMLReader.m */; };
@@ -450,9 +470,29 @@
 		31B966381BE3B6EF00F0402A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = include/RestKit;
 			dstSubfolderSpec = 16;
 			files = (
+				31E07AFF1BF907C4005523CD /* NSData+Base64.h in CopyFiles */,
+				31E07AFE1BF907B4005523CD /* UI.h in CopyFiles */,
+				31E07AFD1BF90728005523CD /* RKObjectPropertyInspector+CoreData.h in CopyFiles */,
+				31E07AF91BF90711005523CD /* RKManagedObjectLoader.h in CopyFiles */,
+				31E07AFA1BF90711005523CD /* RKManagedObjectMappingOperation.h in CopyFiles */,
+				31E07AFB1BF90711005523CD /* RKManagedObjectSeeder.h in CopyFiles */,
+				31E07AFC1BF90711005523CD /* RKManagedObjectThreadSafeInvocation.h in CopyFiles */,
+				31E07AF81BF906F1005523CD /* NSManagedObject+ActiveRecord.h in CopyFiles */,
+				31E07AF71BF906DD005523CD /* CoreData.h in CopyFiles */,
+				31E07AF61BF906D1005523CD /* RKParser.h in CopyFiles */,
+				31E07AF51BF906C2005523CD /* RKManagedObjectMapping.h in CopyFiles */,
+				31E07AF41BF906AD005523CD /* RKManagedObjectStore.h in CopyFiles */,
+				31E07AF31BF90692005523CD /* RKErrors.h in CopyFiles */,
+				31E07AF21BF8CF3B005523CD /* Support.h in CopyFiles */,
+				31E07AEC1BF8CBAD005523CD /* lcl.h in CopyFiles */,
+				31E07AED1BF8CBAD005523CD /* lcl_config_components.template.h in CopyFiles */,
+				31E07AEE1BF8CBAD005523CD /* lcl_config_extensions.template.h in CopyFiles */,
+				31E07AEF1BF8CBAD005523CD /* lcl_config_logger.template.h in CopyFiles */,
+				31E07AF01BF8CBAD005523CD /* lcl_config_logger.h in CopyFiles */,
+				31E07AF11BF8CBAD005523CD /* LCLNSLog.h in CopyFiles */,
 				31B966391BE3B70200F0402A /* RestKit.h in CopyFiles */,
 				31B9663A1BE3B70200F0402A /* Network.h in CopyFiles */,
 				31B9663B1BE3B70200F0402A /* NSDictionary+RKRequestSerialization.h in CopyFiles */,
