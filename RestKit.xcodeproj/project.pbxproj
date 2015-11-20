@@ -452,6 +452,8 @@
 		31E07AFD1BF90728005523CD /* RKObjectPropertyInspector+CoreData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160D56145650490060A5C5 /* RKObjectPropertyInspector+CoreData.h */; };
 		31E07AFE1BF907B4005523CD /* UI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25B6E91B14CF778D00B1E881 /* UI.h */; };
 		31E07AFF1BF907C4005523CD /* NSData+Base64.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25160E911456532C0060A5C5 /* NSData+Base64.h */; };
+		31E7C8FF1BFF2FF800475F6B /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7C8FE1BFF2FF800475F6B /* libxml2.2.dylib */; };
+		31E7C9001BFF300A00475F6B /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7C8FE1BFF2FF800475F6B /* libxml2.2.dylib */; };
 		49A66B0D14CEFB0400A6F062 /* XMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A66B0914CEFB0400A6F062 /* XMLReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49A66B0E14CEFB0400A6F062 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A66B0A14CEFB0400A6F062 /* XMLReader.m */; };
 		49A66B0F14CEFB0400A6F062 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A66B0A14CEFB0400A6F062 /* XMLReader.m */; };
@@ -1030,6 +1032,7 @@
 		25FABED514E37A2B00E609E7 /* RKTestResponseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKTestResponseLoader.m; path = Testing/RKTestResponseLoader.m; sourceTree = "<group>"; };
 		3143D2541BF8A6C60001EB72 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = Resources/DeprecatedLibs/libxml2.2.dylib; sourceTree = "<group>"; };
 		31A577101BAD4212000FEBA4 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../../../usr/lib/libxml2.2.dylib; sourceTree = "<group>"; };
+		31E7C8FE1BFF2FF800475F6B /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libxml2.2.dylib; sourceTree = "<group>"; };
 		49A66B0814CEFB0400A6F062 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENCE; path = XMLReader/LICENCE; sourceTree = "<group>"; };
 		49A66B0914CEFB0400A6F062 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = XMLReader/XMLReader.h; sourceTree = "<group>"; };
 		49A66B0A14CEFB0400A6F062 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = XMLReader/XMLReader.m; sourceTree = "<group>"; };
@@ -1065,6 +1068,7 @@
 			files = (
 				3143D2561BF8A6DF0001EB72 /* libxml2.2.dylib in Frameworks */,
 				25160D1A14564E810060A5C5 /* Foundation.framework in Frameworks */,
+				31E7C9001BFF300A00475F6B /* libxml2.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,6 +1078,7 @@
 			files = (
 				3143D2551BF8A6C60001EB72 /* libxml2.2.dylib in Frameworks */,
 				25A34245147D8AAA0009758D /* Security.framework in Frameworks */,
+				31E7C8FF1BFF2FF800475F6B /* libxml2.2.dylib in Frameworks */,
 				25160F7E145657300060A5C5 /* Cocoa.framework in Frameworks */,
 				25160F7C145657220060A5C5 /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -1152,6 +1157,7 @@
 			isa = PBXGroup;
 			children = (
 				25160DA1145650490060A5C5 /* RestKit.h */,
+				31E7C8FD1BFF2FF800475F6B /* DeprecatedLibs */,
 				25160D58145650490060A5C5 /* Network */,
 				25160D7A145650490060A5C5 /* ObjectMapping */,
 				25160D45145650490060A5C5 /* CoreData */,
@@ -1901,6 +1907,14 @@
 			path = RKRefreshTriggerViewAssets;
 			sourceTree = "<group>";
 		};
+		31E7C8FD1BFF2FF800475F6B /* DeprecatedLibs */ = {
+			isa = PBXGroup;
+			children = (
+				31E7C8FE1BFF2FF800475F6B /* libxml2.2.dylib */,
+			);
+			path = DeprecatedLibs;
+			sourceTree = "<group>";
+		};
 		49A66B0614CEFAD800A6F062 /* XMLReader */ = {
 			isa = PBXGroup;
 			children = (
@@ -2454,6 +2468,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources/DeprecatedLibs",
+					"$(PROJECT_DIR)/Code/DeprecatedLibs",
 				);
 				OBJROOT = "$(SRCROOT)/Build";
 				OTHER_LDFLAGS = "-ObjC";
@@ -2478,6 +2493,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources/DeprecatedLibs",
+					"$(PROJECT_DIR)/Code/DeprecatedLibs",
 				);
 				OBJROOT = "$(SRCROOT)/Build";
 				OTHER_LDFLAGS = "-ObjC";
@@ -2511,6 +2527,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources/DeprecatedLibs",
+					"$(PROJECT_DIR)/Code/DeprecatedLibs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
@@ -2542,6 +2559,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources/DeprecatedLibs",
+					"$(PROJECT_DIR)/Code/DeprecatedLibs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = RestKit;
@@ -2617,6 +2635,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources/DeprecatedLibs",
+					"$(PROJECT_DIR)/Code/DeprecatedLibs",
 				);
 				OBJROOT = "$(SRCROOT)/Build";
 				OTHER_LDFLAGS = "-ObjC";
@@ -2651,6 +2670,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources/DeprecatedLibs",
+					"$(PROJECT_DIR)/Code/DeprecatedLibs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = RestKit;
