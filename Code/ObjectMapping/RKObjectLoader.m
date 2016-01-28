@@ -37,7 +37,9 @@
 - (void)postRequestDidFailWithErrorNotification:(NSError *)error;
 @end
 
-@implementation RKObjectLoader
+@implementation RKObjectLoader {
+    BOOL shouldFinalizeLoad;
+}
 
 @synthesize mappingProvider = _mappingProvider, response = _response;
 @synthesize targetObject = _targetObject, objectMapping = _objectMapping;
@@ -60,12 +62,18 @@
     if (self) {
         _mappingProvider = [mappingProvider retain];
         _mappingQueue = [RKObjectManager defaultMappingQueue];
+        shouldFinalizeLoad = NO;
     }
     
     return self;
 }
 
 - (void)dealloc {
+    
+    if (shouldFinalizeLoad) {
+        [self finalizeLoad:NO];
+    }
+    
     [_mappingProvider release];
     _mappingProvider = nil;
     [_sourceObject release];
@@ -103,6 +111,7 @@
 }
 
 - (void)informDelegateOfError:(NSError *)error {
+    
     [(NSObject<RKObjectLoaderDelegate>*)_delegate objectLoader:self didFailWithError:error];
     
     
@@ -310,12 +319,12 @@
         if ([_delegate respondsToSelector:@selector(objectLoaderDidLoadUnexpectedResponse:)]) {
             [(NSObject<RKObjectLoaderDelegate>*)_delegate objectLoaderDidLoadUnexpectedResponse:self];
         } else {
+            shouldFinalizeLoad = YES;
             [self informDelegateOfError:error];
         }
 
         // NOTE: We skip didFailLoadWithError: here so that we don't send the delegate
         // conflicting messages around unexpected response and failure with error
-        [self finalizeLoad:NO];
 
         return NO;
     } else if ([self.response isError]) {
@@ -337,9 +346,9 @@
     } else {
         RKLogError(@"Encountered an error while attempting to map server side errors from payload: %@", [error localizedDescription]);
     }
-
+    
+    shouldFinalizeLoad = YES;
     [self informDelegateOfError:error];
-    [self finalizeLoad:NO];
 }
 
 #pragma mark - RKRequest & RKRequestDelegate methods
@@ -400,9 +409,10 @@
                                                                 object:self
                                                               userInfo:userInfo];
         }
+        
+        shouldFinalizeLoad = YES;
         [self informDelegateOfError:error];
 
-        [self finalizeLoad:NO];
     }
 
     [pool release];
