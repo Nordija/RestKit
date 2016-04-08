@@ -1045,6 +1045,7 @@ static NSString* lastUpdatedDateDictionaryKey = @"lastUpdatedDateDictionaryKey";
     RKRefreshGestureRecognizer *recognizer = nil;
     if (pullToRefreshEnabled) {
         recognizer = [[[RKRefreshGestureRecognizer alloc] initWithTarget:self action:@selector(pullToRefreshStateChanged:)] autorelease];
+        recognizer.cancelsTouchesInView = NO;
         [self.tableView addGestureRecognizer:recognizer];
     }
     else {
