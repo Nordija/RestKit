@@ -1045,7 +1045,7 @@ static NSString* lastUpdatedDateDictionaryKey = @"lastUpdatedDateDictionaryKey";
     RKRefreshGestureRecognizer *recognizer = nil;
     if (pullToRefreshEnabled) {
         recognizer = [[[RKRefreshGestureRecognizer alloc] initWithTarget:self action:@selector(pullToRefreshStateChanged:)] autorelease];
-        recognizer.cancelsTouchesInView = NO;
+        recognizer.cancelsTouchesInView = NO; // nroos april 8th 2016: On 3D touch devices this needs to be set to NO, in order for touch events to be delivered to the tablecontroller itself.
         [self.tableView addGestureRecognizer:recognizer];
     }
     else {
